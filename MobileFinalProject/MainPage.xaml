@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileFinalProject.MainPage"
+             Title="Shopping List"
+              BackgroundColor="AliceBlue">
+
+    <StackLayout>
+        <ListView x:Name="listView" Margin="20" RowHeight="70" ItemSelected="OnSelection">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="5, 5, 0, 5"
+                                 Orientation="Horizontal"
+                                 Spacing="15">
+                            <CheckBox IsChecked="{Binding IsChecked}"
+                                      HorizontalOptions="Start"
+                                      VerticalOptions="Start"/>
+                            <Label Text="{Binding ItemName}"
+                                   FontAttributes="Bold"
+                                   FontSize="Medium"
+                                    />
+                            
+                    </StackLayout>
+                    </ViewCell>
+                    
+                </DataTemplate>
+             </ListView.ItemTemplate>
+
+         </ListView>
+        <Button x:Name="btnAddProduct"
+                Text="Add New Item"
+                Clicked="btnAddItem"
+                Margin="2"
+                BackgroundColor="#ff6633"
+                TextColor="#fff"/>
+        <Button x:Name="btnViewPrevPurch"
+                Text="View Previous Items"
+                Clicked="btnViewPrevPurch_Clicked"
+                Margin="2"
+                BackgroundColor="#ff6633"
+                TextColor="#fff"/>
+        <Button x:Name="btnClrList"
+                Text="Clear Shopping List"
+                Clicked="btnClrList_Clicked"
+                Margin="2"
+                BackgroundColor="#ff6633"
+                TextColor="#fff"/>
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MobileFinalProject.AddItemPage"
+    Title="Add New Item">
+
+    <ContentPage.Content>
+        <StackLayout
+            Orientation="Vertical"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            Padding="10">
+
+
+
+            <Label
+                Text="Product Name:"
+                Margin="2"/>
+            <Entry
+                x:Name="name"
+                Text="{Binding product.ItemName}"
+                Margin="2,2,2,5"
+                HorizontalOptions="FillAndExpand"/>
+            <Label Text="Add to shoppong list?"/>
+            <CheckBox IsChecked="{Binding product.IsNeeded}"/>
+
+            <Grid HorizontalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Text="{Binding btnSaveLabel}" x:Name="btnSave" HorizontalOptions="FillAndExpand"
+            BackgroundColor="#ff6633" TextColor="#fff"
+            Margin="2" Grid.Column="0" Grid.Row="0" Command="{Binding btnSaveProduct}"/>
+
+            <Button Text="CLEAR" x:Name="btnClear" HorizontalOptions="FillAndExpand"
+            BackgroundColor="#bfbfbf" TextColor="#fff"
+            Margin="2" Grid.Column="1" Grid.Row="0" Command="{Binding btnClearProduct}"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
